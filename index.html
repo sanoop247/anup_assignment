@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Assignment-1</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<!-- Latest compiled JavaScript -->
+<script type="text/javascript" src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="node_modules/angular/angular.min.js"></script>
+<script type="text/javascript" src="node_modules/angular-ui-bootstrap/dist/ui-bootstrap-tpls.js"></script>
+<script type="text/javascript" src="node_modules/angular-translate/dist/angular-translate.min.js"></script>
+<script type="text/javascript" src="node_modules/angular-mocks/angular-mocks.js"></script>
+<script type="text/javascript" src="app.js"></script>
+<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body ng-app="myApp" ng-controller="myController">
+	<div class="container-fluid">
+		<div class="wrapper col-xs-12">
+			<header>
+				<h1 translate="HEADLINE"></h1>
+			</header>
+			<div>
+				<select ng-model="language_select" ng-change="langChange(language_select)">
+					<option translate="LANG1" value="en" ng-selected="true"></option>
+					<option translate="LANG2" value="hi"></option>
+				</select>
+			</div>
+			<div class="col-xs-1"></div>
+			<div class="col-xs-10 table_container">
+				<a href="#" class="add_link" ng-click="showTask()" translate="button_add"></a>
+				
+					<!--add_task ends  -->
+				<table class="col-xs-12">
+					<thead>
+						<tr>
+							<th class="col-xs-1">#</th>
+							<th class="col-xs-2" translate="Task_id"></th>
+							<th class="col-xs-2" translate="Task_name"></th>
+							<th class="col-xs-4" translate="Mark_completed"></th>
+							<th class="col-xs-3" translate="Remove_task"></th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr ng-repeat="task in data|orderBy : 'taskid'" ng-class="{checked:check}">
+							<td class="col-xs-1">{{$index+1}}</td>
+							<td class="col-xs-2">{{task.taskid}}</td>
+							<td class="col-xs-2">{{task.taskname}}</td>
+							<td class="col-xs-4"><input type="checkbox" ng-model="check"></td>
+							<td class="col-xs-3">
+								<a href="#" ng-click="removeTask(task.taskid)" translate="button_remove"></a>
+							</td>
+						</tr>
+					</tbody>
+				</table>	
+			</div>
+			<!-- table_container ends -->
+			<div class="col-xs-1"></div>	
+	</div>
+	<!-- wrapper ends -->
+	</div>
+	<!-- container-fluid ends -->
+</body>
+</html>

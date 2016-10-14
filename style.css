@@ -1,0 +1,58 @@
+.wrapper{
+	margin: 0 auto;
+}
+header h1{
+	text-align: center;
+	margin-bottom: 5px;
+}
+.add_link{
+	display: block;
+	text-align: right;
+}
+.add_task p{
+	font-weight: bold;
+	text-align: right;
+}
+.add_task input{
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	padding: 5px 0px;
+	margin-bottom: 15px;
+}
+.add_button{
+	background-color:#004d99;
+	border-radius: 5px;
+	width: 50px;
+	margin: 0px;
+	padding: 5px 0px;
+	color: #fff;
+	border: 0px;
+}
+.cancel_button{
+	background-color: #00e6e6;
+	border-radius: 5px;
+	width: 75px;
+	margin: 0px;
+	padding: 5px 0px;
+	border: 0px;
+	color: #fff;
+}
+table{
+	margin-top: 20px;
+}
+table th{
+	padding: 10px 0px;
+}
+table tr{
+	border-top: 1px solid #ccc;
+}
+table tr td{
+	padding: 10px 0px;
+}
+.checked{
+	background-color: #ccc;
+}
+.popup_menu{
+	height: 200px;
+	padding: 50px;
+}
